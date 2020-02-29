@@ -53,7 +53,7 @@ function checkFileType(file, cb){
 //bringing in EJS templates 
 app.set('view engine', 'ejs');
 
-// code below creates the POST request fromt he uploads folder that holds the image. this is done by setting the method to POST in the html code and setting the action to /uploads which makes the file input save to that folder. 
+// code below creates the POST request from the uploads folder that holds the image. this is done by setting the method to POST in the html code and setting the action to /uploads which makes the file input save to that folder. 
 app.post('/upload', (req, res) => {
   upload(req, res, (err) => {
     if(err){
@@ -91,7 +91,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.get('/', (req, res) => res.render('index'));
+app.get('/public/home-page.html', (req, res) => res.render('home-page.html'));
 
 app.listen(PORT, function(){
 
@@ -103,4 +103,10 @@ app.listen(PORT, function(){
 //       console.log("App listening on PORT " + PORT);
 //     });
 //   });
+
+
+
+// Routes below 
+require("./routes/html-routes.js")(app);
+
   
