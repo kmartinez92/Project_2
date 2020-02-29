@@ -300,9 +300,7 @@ input[class="form-input"]{
     font-family: 'Abel', sans-serif;
     color: #5E6472;
   
-    outline: none;
-    border: ;
-  
+    outline: none;  
     border-radius: 0px 5px 5px 0px;
     transition: 0.2s linear;
     margin-left: -3%;
