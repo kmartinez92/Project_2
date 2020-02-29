@@ -38,6 +38,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
+
 
 // routes for login...
 app.get('/', checkAuthenticated, (req, res) =>{
