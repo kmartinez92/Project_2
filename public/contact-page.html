@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact Page</title>
-	<link rel="stylesheet" href="assets/style/signin.css">
+	<link rel="stylesheet" href="assets/style/contact.css">
 </head>
 
 <body>
@@ -35,23 +35,20 @@
 													<form id="form">
 														<div class="wrapper">
 															<!-- Enter information  -->
-															<input type="text" placeholder="Your name" />
-															<div class="gradient-bg"></div>
+															<input class="form-input" id="txt-input" type="text"
+																	placeholder="Full Name" required>
+															<br>
 														</div>
-														<br>
+												
 														<div class="wrapper">
-															<input type="email" placeholder="Email address" />
-															<div class="gradient-bg"></div>
-														</div>
+															<input class="form-input" id="txt-input" type="text"
+																	placeholder="Email" required>
+															</div>
 														<br>
 														<!-- Message -->
-														<div class="wrapper">
-															<input type="text" placeholder="Subject">
-															<div class="gradient-bg"></div>
-														</div>
-														<div class="wrapper wrapper-big">
-															<textarea placeholder="Message"></textarea>
-															<div class="gradient-bg"></div>
+														<div class="form-group">
+															<label for="exampleFormControlTextarea1"></label>
+															<textarea class="form-control" placeholder="Message" id="exampleFormControlTextarea1" rows="3"></textarea>
 														</div>
 														<button>Send</button>
 													</form>
