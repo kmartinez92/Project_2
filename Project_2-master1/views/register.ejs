@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Signin form</title>
+	<link rel="stylesheet" href="assets/style/signup.css">
+</head>
+
+<body>
+	<div class="background">
+		<div class="container">
+			<div class="button">
+				<section id="intro">
+
+					<div id="intro-content" class="center-content">
+
+						<div class="center-content-inner">
+
+							<div class="content-section content-section-margin">
+
+								<div class="content-section-grid clearfix">
+
+									<a class="button nav-link">
+
+										<div class="bottom">
+
+										</div>
+
+										<div class="top">
+
+											<div class="label">
+												<div class="overlay">
+													<form action="/register" method="POST">
+														<!--   con = Container  for items in the form-->
+														<div class="con">
+															<!--     Start  header Content  -->
+															<div class="head-form">
+																<h2>Sign Up</h2>
+																<!-- explanation of the signup form -->
+																<p>Enter your information below</p>
+															</div>
+															<!--     End  header Content  -->
+															<br>
+															<div class="field-set">
+																<!-- Full Name Input -->
+																<input class="form-input" id="name" name="name"
+																	type="text" placeholder="Full Name" required>
+																<br>
+																<!-- Email Input  -->
+																<input class="form-input" id="email" name="email"
+																	type="email" placeholder="Email" required>
+																<br>
+																<!--   Password -->
+
+																<span class="input-item">
+																	<i class="fa fa-key"></i>
+																</span>
+																<!--   Creat Password Input-->
+																<input class="form-input" type="password" id="password"
+																	name="password" placeholder="Create Password"
+																	required>
+
+																<!--      Show/hide password  -->
+																<span>
+																	<i class="fa fa-eye" aria-hidden="true"
+																		type="button" id="eye"></i>
+																</span>
+																<br>
+
+																<!--  Signup Button -->
+																<button type="submit" class="sign-up"> Sign Up </button>
+															</div>
+
+															<!--   End Conrainer  -->
+														</div>
+
+														<!-- End Form -->
+													</form>
+													<form action="/home-page.html" method="GET" enctype="multipart/form-data">
+														<button type="submit" class="log-in">Home</button>
+													</form>
+												</div>
+											</div>
+
+											<div class="button-border button-border-left"></div>
+											<div class="button-border button-border-top"></div>
+											<div class="button-border button-border-right"></div>
+											<div class="button-border button-border-bottom"></div>
+
+										</div>
+
+									</a>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
+			</div>
+		</div>
+	</div>

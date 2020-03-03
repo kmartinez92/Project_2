@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy</title>
+    <link rel="stylesheet" href="assets/style/buy.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+<style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+  
+  <title>Node File Uploads</title>
+</head>
+
+   <!-- Nav bar -->
+
+
+
+
+<body>
+
+
+  <nav>
+    <!-- create div to contain menu and search - set to display: flex    -->
+    <!-- create div to contain menu and search -->
+    <!-- <div class="nav-search">
+        <div class="menu">
+            <a href="home-page.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="FQA.html">FAQs</a>
+            <a href="contact-page.html">Contact</a>
+            <a href="./register">Sign Up</a>
+        </div>
+    </div>
+    <form action="">
+        <input type="search">
+        <i class="fa fa-search"></i>
+    </form>
+</nav> -->
+
+
+
+
+  <!-- <div class="container">
+    <h1>File Upload</h1>
+    <%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/update" method="POST" enctype="multipart/form-data">
+      <div class="file-field input-field">
+        <div class="btn grey">
+          <span>File</span>
+          <input name="myImage" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <br> -->
+    <!-- code below makes the image be responsive using syntax used in materialized classes since I used that instead of bootstrap -->
+
+    <form action="/index" method="GET" enctype="multipart/form-data">
+      <button type="submit" class="log-in btn btn-primary">Home</button>
+    </form>
+    <br>
+    <br>
+    <br>
+
+    
+  <form action="/logout?_method=DELETE" method="POST">
+    <button type="submit" class="delmovie btn btn-primary"> Log Out </button>
+  </form>
+  
+
+
+    <div class="card-image">
+      <div class="row1">
+
+
+
+
+    <% for(var i = 0; i < images.length; i++) { %>
+
+
+
+  <!-- Card Start -->
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src="<%=  '/uploads/' + images[i].name %>" alt="Show" class="card-img-top w3-card-4" alt="...">
+                <div class="card-body">
+                  <p class="card-title"><%=  'ID: ' + images[i].id %></p>
+                    <h2 class="card-title"><%=  'Item: ' + images[i].item %></h2>
+                    <p class="card-text-2"><%=  'Description: ' + images[i].description %></p>
+
+                    <p class="card-text"><%=  'Price: ' + images[i].price %></p>
+                    <!-- <a href="#" class="btn btn-primary">Message Seller</a> -->
+
+                  <form id="updatemovie" >
+                    <textarea type="text" name="id" placeholder="Please enter the item's id  (<%= images[i].id %>) to confirm the change"></textarea>
+                    
+                      <textarea type="text" name="price" placeholder="Enter new Price"></textarea>
+                      <button type="submit"  class="btn btn-primary">Update Price!</button>
+                      </form>
+                    <button data-movieid="<%= images[i].id %>" class="delmovie btn btn-warning">Delete</button>
+
+                </div>
+            </div>
+        </div>
+
+
+<% } %>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
+
+
+
+  <script type="text/javascript">
+
+
+
+
+    $("#updatemovie").on("submit", function(event) {
+       // Make sure to preventDefault on a submit event.
+       event.preventDefault();
+   
+       var id = $("[name=id]").val().trim();
+   
+       var updatedMovie = {
+        price: $("#updatemovie [name=price]").val().trim()
+       };
+   
+       // Send the PUT request.
+       $.ajax("/api/filess/" + id, {
+         type: "PUT",
+         data: updatedMovie
+       }).then(
+         function() {
+           console.log("updated id ", id);
+           // Reload the page to get the updated list
+           location.reload(true);
+         }
+       );
+     });
+   
+   
+   
+     
+   
+   
+       $(".delmovie").on("click", function(event) {
+         var id = $(this).data("movieid");
+     
+         // Send the DELETE request.
+         $.ajax("/api/file/" + id, {
+           type: "DELETE"
+         }).then(
+           function() {
+             console.log("deleted id ", id);
+             // Reload the page to get the updated list
+             location.reload(true);
+   
+           }
+         );
+       });
+     </script>
+   
+   
+
+
+
+</body>
+</html>

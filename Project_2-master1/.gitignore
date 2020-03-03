@@ -1,0 +1,5 @@
+.env
+node_modules
+server.js
+server2.js
+./views/index2.ejs

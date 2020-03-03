@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>upload File</title>
+	<link rel="stylesheet" href="assets/style/upload.css">
+	<script type="text Javascript"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="background">
+		<div class="container">
+			<div class="button">
+				<section id="intro">
+
+					<div id="intro-content" class="center-content">
+
+						<div class="center-content-inner">
+
+							<div class="content-section content-section-margin">
+
+								<div class="content-section-grid clearfix">
+
+									<a href="#" class="button nav-link">
+
+										<div class="bottom"></div>
+
+										<div class="top">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="file-wrapper">
+
+												   <form action="/update" method="POST" enctype="multipart/form-data">
+			
+														<input type="file" name="myImage" accept="image/*" />
+														<div class="close-btn">×</div>
+													</div>
+													<br>
+													<input  name="item" class="form-input" id="txt-input" type="text"
+														placeholder="Item" required>
+													<br>
+													<input name="description" class="form-input" id="txt-input" type="text"
+														placeholder="Description" required>
+													<br>
+													<input name="price"  class="form-input" id="txt-input" type="text"
+														placeholder="Price" required>
+													<br>
+													<button type="submit" class="btn submits upload">Upload</button>
+												</form>
+
+														<!-- upload -->
+
+
+
+														<form action="/update" method="POST" enctype="multipart/form-data">
+															<button type="submit" class="btn submits sign-up">My Items</button>
+														</form>
+
+														
+														<form action="/logout?_method=DELETE" method="POST">
+															<button type="submit" class="btn btn-warning"> Log Out </button>
+														</form>
+
+
+
+													<div class="col-md-6">
+																									
+														<div class="container2">
+															
+															<div class="avatar-upload">
+																<div class="header">PROFILE</div>	
+																<div class="avatar-edit">
+																	<input type='file' id="imageUpload"
+																		accept=".png, .jpg, .jpeg" />
+																	<label for="imageUpload"></label>
+																</div>
+
+															
+
+																<div class="avatar-preview">
+																	<div id="imagePreview"
+																		style="background-image: url(http://i.pravatar.cc/500?img=10);">
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+
+										<div class="button-border button-border-left"></div>
+										<div class="button-border button-border-top"></div>
+										<div class="button-border button-border-right"></div>
+										<div class="button-border button-border-bottom"></div>
+
+								</div>
+
+								</a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+			</div>
+			
+		
+			
+
+			</section>
+
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+
+		$('input[name="upload-img"]').on('change', function () {
+			readURL(this, $('.file-wrapper'));  //Change the image
+		});
+
+		$('.close-btn').on('click', function () { //Unset the image
+			let file = $('input[name="upload-img"]');
+			$('.file-wrapper').css('background-image', 'unset');
+			$('.file-wrapper').removeClass('file-set');
+			file.replaceWith(file = file.clone(true));
+		});
+
+		//FILE
+		function readURL(input, obj) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					obj.css('background-image', 'url(' + e.target.result + ')');
+					obj.addClass('file-set');
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		};
+		function profileImageUpload(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+					$('#imagePreview').hide();
+					$('#imagePreview').fadeIn(650);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		$("#imageUpload").change(function () {
+			profileImageUpload(this);
+		});
+	</script>
+	</div>

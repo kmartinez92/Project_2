@@ -1,0 +1,371 @@
+html,body {
+    margin: 0;
+    height: 100%;
+}
+/* background image and animation */
+.background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+  .background:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+  }
+  .background:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ() scale(1.0,1.0);
+      -moz-transform: translateZ() scale(1.0,1.0);
+      -ms-transform: translateZ() scale(1.0,1.0);
+      -o-transform: translateZ() scale(1.0,1.0);
+      transform: translateZ() scale(1.0,1.0);
+      background-image: url('../images/livingroom.jpg');
+      background-size: cover; 
+      background-attachment: fixed;
+      animation: increase 60s linear 10ms infinite;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      z-index: -2;
+  }
+  .banner-text {
+      width: 900%;
+      padding: 35% 10% 0 10%;
+      text-align: center;
+  }
+  .banner-text h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      background-color: rgba(0,0,0,05);
+      padding: 15px;
+  }
+  @keyframes increase {
+      0% {transform: scale(1) }
+      100% {transform: scale(1.5) }
+  }
+html {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,*:before,*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url("../images/livingroom.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+b {
+  position: relative;
+  display: block;
+  font-family: helvetica neue, helvetica, sans-serif;
+  line-height: 1.15em;
+  margin-top: -1.15em;
+  top: 2.3em;
+  font-size: 0.67em;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  opacity: 0.75;
+  text-align: center;
+}
+
+b span {
+  font-size: 0.785em;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+#intro {
+  width: 200px;
+  margin: 100px auto 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    margin-top: 40px;
+}
+
+.button .bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button .top {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 124px 234px 122px 234px;
+    border: 2px solid black;
+}
+
+.button-dark .top {
+    border: 2px solid #fff;
+}
+
+.button .top .label {
+    font-family: sans-serif;
+    font-weight: 600;
+    color: black;
+    font-size: 12px;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button-dark .top .label {
+    color: #fff;
+}
+
+.button:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.button:hover .top .label {
+    color: black;
+}
+
+.button-border {
+    position: absolute;
+    background-color: black;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.button:hover .top .button-border-left,.button:hover .top .button-border-right {
+    height: calc(100% + 2px);
+}
+
+.button:hover .top .button-border-top,.button:hover .top .button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+.button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+} 
+.container {
+    margin-left: 20%;
+    margin-right: 55%;
+    margin-top: -8%;
+}
+.con { 
+    margin-left: -200%;
+    margin-right: -200%;
+}
+form .con {
+    display: -webkit-flex;
+    display: flex;
+  
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+      margin: 0 auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+body {
+	background: linear-gradient(to right, var(--color-pink-1), var(--color-pink-2));
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Muli';
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.contact-container {
+	background-color: #fff;
+	border: 3px solid #000;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 70px;
+	text-align: center;
+	width: 600px;
+	max-width: 100%;
+}
+
+.contact-container h2 {
+	margin: 0 0 10px;
+	opacity: 0.8;
+}
+
+.contact-container p {
+	opacity: 0.7;
+	letter-spacing: 0.5px;
+	line-height: 24px;
+}
+
+.contact-container form {
+	width: 450px;
+	max-width: 100%;
+}
+
+.contact-container .wrapper {
+	position: relative;
+	margin: 10px 0;
+	height: 44px;
+	width: 100%;
+}
+
+.contact-container .wrapper-big {
+	height: 80px;
+}
+
+.contact-container input, .contact-container textarea {
+	border: none;
+	border-radius: 4px;
+	font-family: 'Muli';
+	font-size: 14px;
+	padding: 12px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+
+.contact-container input:focus, .contact-container textarea:focus {
+	outline: 0;
+}
+
+.contact-container input:focus + .gradient-bg, .contact-container textarea:focus + .gradient-bg {
+	background: linear-gradient(to right, var(--color-pink-1), var(--color-pink-2));
+}
+
+.contact-container .gradient-bg {
+	background: #999;
+	border-radius: 4px;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	z-index: 9;
+}
+
+.contact-container button {
+	background: linear-gradient(to right, var(--color-pink-1), var(--color-pink-2));
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 3px 5px rgba(237, 115, 200, 0.5);
+	color: #fff;
+	display: block;
+	font-size: 16px;
+	padding: 12px;
+	width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+	.contact-container {
+		padding: 20px 30px;
+	}
+}
+.input[type="text"] {
+    width: 250px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+  
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
