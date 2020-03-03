@@ -374,6 +374,14 @@ app.post('/update', (req, res) => {
       }
     });
 
+    connection.query("SELECT * FROM file;", function(err, data) {
+      if (err) {
+        throw err;
+      }
+  
+  
+    });
+
 
   
    res.redirect("/upload");
