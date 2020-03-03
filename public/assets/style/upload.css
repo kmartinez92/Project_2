@@ -1,0 +1,441 @@
+html,body {
+    margin: 0;
+    height: 100%;
+}
+/* background image and animation */
+.background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+  .background:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+  }
+  .background:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ() scale(1.0,1.0);
+      -moz-transform: translateZ() scale(1.0,1.0);
+      -ms-transform: translateZ() scale(1.0,1.0);
+      -o-transform: translateZ() scale(1.0,1.0);
+      transform: translateZ() scale(1.0,1.0);
+      background-image: url('../images/livingroom.jpg');
+      background-size: cover; 
+      background-attachment: fixed;
+      animation: increase 60s linear 10ms infinite;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      z-index: -2;
+  }
+  .banner-text {
+      width: 900%;
+      padding: 35% 10% 0 10%;
+      text-align: center;
+  }
+  .banner-text h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      background-color: rgba(0,0,0,05);
+      padding: 15px;
+  }
+  @keyframes increase {
+      0% {transform: scale(1) }
+      100% {transform: scale(1.5) }
+  }
+html {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,*:before,*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url("../images/livingroom.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+b {
+  position: relative;
+  display: block;
+  font-family: helvetica neue, helvetica, sans-serif;
+  line-height: 1.15em;
+  margin-top: -1.15em;
+  top: 2.3em;
+  font-size: 0.67em;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  opacity: 0.75;
+  text-align: center;
+}
+
+b span {
+  font-size: 0.785em;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+#intro {
+  width: 200px;
+  margin: 100px auto 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    margin-top: 40px;
+}
+
+.button .bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button .top {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 224px 334px 244px 334px;
+    border: 2px solid black;
+}
+
+.button-dark .top {
+    border: 2px solid #fff;
+}
+
+.button .top .label {
+    font-family: sans-serif;
+    font-weight: 600;
+    color: black;
+    font-size: 12px;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button-dark .top .label {
+    color: #fff;
+}
+
+.button:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.button:hover .top .label {
+    color: black;
+}
+
+.button-border {
+    position: absolute;
+    background-color: black;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.button:hover .top .button-border-left,.button:hover .top .button-border-right {
+    height: calc(100% + 2px);
+}
+
+.button:hover .top .button-border-top,.button:hover .top .button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+.button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+} 
+.container {
+    margin-left: 2%;
+    margin-right: 55%;
+    margin-top: -10%;
+    
+}
+.con { 
+    margin-left: -200%;
+    margin-right: -200%;
+}
+/* upload image */
+
+.file-wrapper{
+  width: 300px;
+  height: 200px;
+  border: 2px solid black;
+  position:relative;
+  margin: auto;
+  margin-top: -180px;
+  margin-left: -80%;
+}
+.file-wrapper:after{
+  content: '+';
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;margin: auto;
+  width: max-content; height: max-content; display: block;
+  max-height: 85px;
+  font-size: 70px;
+  font-weight: normal;
+  color: black;
+  
+}
+.file-wrapper:before{
+  content: 'UPLOAD IMAGE';
+  display: block;
+  position: absolute;
+  left: 0; right: 0;
+  margin: auto;
+  bottom: 35px;
+  width: max-content;
+  height: max-content;
+  font-size: 0.75em;
+  color: black;
+}
+.file-wrapper:hover:after{font-size: 73px;}
+.file-wrapper .close-btn{display: none;}
+input[type="file"]{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 99999;
+  cursor: pointer;
+}
+.file-set{
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: transparent;
+  padding: 10px;
+  border-width: 0px;
+}
+.file-set:hover{
+  transition: all 0.5s ease-out;
+  filter:brightness(110%);
+}
+.file-set:before{color: transparent;}
+.file-set:after{color: transparent;}
+.file-set .close-btn{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: #000;
+  color: #fff;
+  top: 0; right: 0;
+  font-size: 25px;
+  text-align: center;
+  line-height: 1.5;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.file-set > input{pointer-events: none;}
+
+body {
+    background: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+}
+.header {
+    color: black;
+    font-family: 'Permanent Marker';
+}
+/* Avtar */
+body {
+    background: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+  }
+  .container2 {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: -100px;
+    margin-left: 140%;
+    margin-top: -170%;
+    margin-bottom: 200px;
+  } 
+  .avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+  }
+  .avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 5px;
+  }
+  .avatar-upload .avatar-edit input {
+    display: none;
+  }
+  .avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+    margin-left: 510%;
+    margin-bottom: -50px;
+    
+    
+  }
+  .avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+    
+  }
+  .avatar-upload .avatar-edit input + label:after {
+    content: "\f040";
+    font-family: "FontAwesome";
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    margin-left: 540%;
+  }
+  .avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #f8f8f8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  .avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* inputs form */
+input[class="form-input"]{
+    width: 150px;
+    height: 30px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    
+    font-size: 12px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: 1px solid black;
+    
+  
+    border-radius: 0px 0px 0px 0px;
+    transition: 0.2s linear;
+    
+}
+input[id="txt-input"] {width: 250px; margin-left: -70%;}
+/* focus  */
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+  /* Button */
+  button {
+    display: inline-block;
+    color: #252537;
+  
+    width: 280px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+    margin-left: -73.5%;
+}
