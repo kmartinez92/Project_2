@@ -107,23 +107,39 @@ app.get("/", function(req, res) {
     // console.log('The solution is: ', data);
 
     // Test it.
-    // res.send(data);
-    var images = []
+    
+    function myFunction() {
 
-    for (var i = 0; i < data.length; i++) {
-      console.log(data[i].name);
-
-      img = (data[i].name)
-      console.log(img)
-      images.push(img);
+      // setTimeout(function() {
+      //   $('#loading').addClass('hidden');
+      // }, 3000);
 
 
-      res.render("index", { images: data  } );
+    setTimeout(function()
+      { res.render("index", { images: data  })
+    }, 
+  
+    2000);
+    }
 
+      myFunction()
+
+
+
+
+    // console.log("befoure imges")
+    // var images = []
+    //   console.log("after imges")
+
+    // for (var i = 0; i < data.length; i++) {
+    //   console.log(data[i].name);
+
+    //   img = (data[i].name)
+    //   console.log(img)
+    //   images.push(img);
 
 
     //  return res.render("index", {file: `uploads/${data[i].name}`});
-
 
       // res.render('index',
       // {
@@ -132,17 +148,36 @@ app.get("/", function(req, res) {
       // );
 
       
-    }
+    // }
+    // res.render("index", { images: data  } );
 
    // res.render("index", { wishes: data });
   });
 });
 
 
+// app.post("/", function(req, res) {
+//   // Test it
+//   // console.log('You sent, ' + req.body.task);
+
+//   // Test it
+//   // return res.send('You sent, ' + req.body.task);
+
+//   // When using the MySQL package, we'd use ?s in place of any values to be inserted, which are then swapped out with corresponding elements in the array
+//   // This helps us avoid an exploit known as SQL injection which we'd be open to if we used string concatenation
+//   // https://en.wikipedia.org/wiki/SQL_injection
+//   connection.query("INSERT INTO file (description) VALUES (?)", [req.body.task], function(err, result) {
+//     if (err) throw err;
+
+//     res.redirect("/");
+//   });
+// });
+
+
 
 
 // code below creates the POST request fromt he uploads folder that holds the image. this is done by setting the method to POST in the html code and setting the action to /uploads which makes the file input save to that folder. 
-app.post('/upload', (req, res) => {
+app.post('/update', (req, res) => {
   upload(req, res, (err) => {
     if(err){
       res.render('index', {
@@ -155,7 +190,8 @@ app.post('/upload', (req, res) => {
         res.render('index', {
           msg: 'Error: No File Selected!'
         });
-      } else {
+      } 
+      else {
 
         //below is the code that will be used to render and post the image to the image tag we have in our HTML code that is in index.ejs 
         console.log('file received');
@@ -165,12 +201,13 @@ app.post('/upload', (req, res) => {
           {
             name: req.file.filename ,
             type: req.file.mimetype,
-            size: req.file.size
+            size: req.file.size,
+            description:req.body.task
           },
         )
 
         
-
+       
       
         console.log('file add');
 
@@ -181,21 +218,68 @@ app.post('/upload', (req, res) => {
 
         res.render('index',{message: message, status:'success',
       
-        file: `uploads/${req.file.filename}`
+        // file: `uploads/${req.file.filename}`
 
       });
-      
 
+      console.log('before reload');
+
+      // connection.query("INSERT INTO file (description) VALUES (?)", [req.body.task], function(err, result) {
+      //   if (err) throw err;
+    
+      // });
+
+      console.log('after reload');
  
-
       }
+
+
     }
+  });
+
+  res.redirect("/");
+
+});
+
+console.log('after post');
+
+
+
+// // Delete a movie
+app.delete("/api/file/:id", function(req, res) {
+  connection.query("DELETE FROM file WHERE id = ?", [req.params.id], function(err, result) {
+    if (err) {
+      // If an error occurred, send a generic server failure
+      return res.status(500).end();
+    }
+    else if (result.affectedRows === 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    }
+    res.status(200).end();
+    console.log(" end back delete")
+
   });
 });
 
 
 
-
+// // Delete a movie
+app.put("/api/filess/:id", function(req, res) {
+connection.query("UPDATE file SET description = ? WHERE id = ?", 
+[req.body.movie, req.params.id], function(err, result) {
+  if (err) {
+    // If an error occurred, send a generic server failure
+    return res.status(500).end();
+  }
+  else if (result.changedRows === 0) {
+    // If no rows were changed, then the ID must not exist, so 404
+    return res.status(404).end();
+  }
+  res.status(200).end();
+console.log("testtest")
+});
+});
 
 
 // function allImage() {
@@ -297,8 +381,6 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
-
 
 
 
