@@ -2,6 +2,18 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
 
+var mysql = require("mysql");
+
+
+var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "gw2019gw",
+    database: "files"
+  });
+
+
 // authenticate whether or not the user entered the proper info into the login page
 function initialize(passport, getUserByEmail, getUserById) {
     const authenticateUser = async (email, password, done) => {
